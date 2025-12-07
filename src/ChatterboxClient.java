@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
@@ -141,9 +142,7 @@ public class ChatterboxClient {
         // System.out.println(ChatterboxOptions);
 
         return ChatterboxOptions;
-        
-        // Remove this exception
-        // throw new UnsupportedOperationException("Argument parsing not yet implemented. Implement parseArgs and remove this exception");
+
     }
 
     /**
@@ -162,8 +161,14 @@ public class ChatterboxClient {
         this.userInput = new Scanner(userInput, StandardCharsets.UTF_8);
         this.userOutput = userOutput;
 
-        throw new UnsupportedOperationException("Constructor not yet implemented. Implement ChatterboxClient constructor and remove this exception");
+        // throw new UnsupportedOperationException("Constructor not yet implemented. Implement ChatterboxClient constructor and remove this exception");
         // TODO: copy options.getHost(), getPort(), getUsername(), getPassword() into fields
+
+        this.host = options.getHost();
+        this.port = options.getPort();
+        this.username = options.getUsername();
+        this.password = options.getPassword();
+
     }
 
     /**
