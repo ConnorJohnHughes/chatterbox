@@ -148,7 +148,7 @@ public class ChatterboxClient {
         String USERNAME = args[2];
         String PASSWORD = args[3];
         ChatterboxOptions chatterboxOptions = new ChatterboxOptions(HOST, PORT, USERNAME, PASSWORD);
-        // System.out.println(ChatterboxOptions);
+
 
         return chatterboxOptions;
 
@@ -170,8 +170,6 @@ public class ChatterboxClient {
         this.userInput = new Scanner(userInput, StandardCharsets.UTF_8);
         this.userOutput = userOutput;
      
-
-        // throw new UnsupportedOperationException("Constructor not yet implemented. Implement ChatterboxClient constructor and remove this exception");
         // TODO: copy options.getHost(), getPort(), getUsername(), getPassword() into fields
 
         this.host = options.getHost();
@@ -196,11 +194,8 @@ public class ChatterboxClient {
      * @throws IOException if the socket cannot be opened
      */
     public void connect() throws IOException {
-        // throw new UnsupportedOperationException("Connect not yet implemented. Implement connect() and remove this exception!");
-
         // Make sure to have this.serverReader and this.serverWriter set by the end of this method!
         // hint: get the streams from the sockets, use those to create the InputStreamReader/OutputStreamWriter and the BufferedReader/BufferedWriter
-        System.out.println(host + port);
 
         Socket socket = new Socket(host, port);
 
