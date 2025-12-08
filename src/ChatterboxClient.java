@@ -163,6 +163,7 @@ public class ChatterboxClient {
     public ChatterboxClient(ChatterboxOptions options, InputStream userInput, OutputStream userOutput) {
         this.userInput = new Scanner(userInput, StandardCharsets.UTF_8);
         this.userOutput = userOutput;
+     
 
         // throw new UnsupportedOperationException("Constructor not yet implemented. Implement ChatterboxClient constructor and remove this exception");
         // TODO: copy options.getHost(), getPort(), getUsername(), getPassword() into fields
@@ -243,7 +244,7 @@ public class ChatterboxClient {
         String line = serverReader.readLine();
         System.out.println(line);
         
-        String line2 = userInput.nextLine();
+        String line2 = username + " " + password;
 
         serverWriter.write(line2);
         serverWriter.newLine();
@@ -297,13 +298,14 @@ public class ChatterboxClient {
         while(true){
     
             try {
-                String line = serverReader.readLine();
-                if(line.isEmpty()){
-                    System.out.println("line is empty");
+                String line = serverReader.readLine();;
+                if(line.isBlank()){
+                    System.out.println("line is empty... nothing to read");
                     return;
                 }else{
                System.out.println(line);
-            //    serverWriter.write(line);
+                    // serverReader.readLine();
+                    
                 }
             } catch (IOException e) {
                 System.out.println(e.getMessage());
